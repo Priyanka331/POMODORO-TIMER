@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pomodoro Timer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app light">
+    <h1>Pomodoro Timer</h1>
+
+    <div class="settings">
+      <label>
+        Focus (minutes):
+        <input id="focusInput" type="number" value="25" min="1" />
+      </label>
+      <label>
+        Break (minutes):
+        <input id="breakInput" type="number" value="5" min="1" />
+      </label>
+      <label>
+        Theme:
+        <select id="themeSelect">
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
+      </label>
+      <label>
+        Sound:
+        <select id="soundSelect">
+          <option value="ding.mp3">Ding</option>
+          <option value="bell.mp3">Bell</option>
+          <option value="chime.mp3">Chime</option>
+        </select>
+      </label>
+    </div>
+
+    <div id="timer" class="timer focus">
+      <h2 id="phaseLabel">Focus</h2>
+      <div id="timeDisplay">25:00</div>
+      <div class="progress-ring">
+        <svg width="120" height="120">
+          <circle id="progressCircle" cx="60" cy="60" r="54" stroke-width="8" />
+        </svg>
+      </div>
+      <div class="controls">
+        <button id="startBtn">Start</button>
+        <button id="pauseBtn">Pause</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+    </div>
+
+    <div class="history">
+      <h3>Today's Focus Sessions</h3>
+      <ul id="historyList"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
