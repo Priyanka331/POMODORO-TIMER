@@ -3,6 +3,7 @@ let breakDuration = 5;
 let timeLeft = focusDuration * 60;
 let isRunning = false;
 let isFocus = true;
+let isPaused = false;
 let timerInterval;
 let selectedSound = "ding.mp3";
 
@@ -25,9 +26,13 @@ function formatTime(seconds) {
 }
 
 function updateDisplay() {
+  let label = isFocus ? "Focus" : "Break";
+  if (isPaused && !isRunning) {
+    label += " (Paused)";
+  }
+  phaseLabel.textContent = label;
+  timerDiv.className = `timer ${isFocus ? "focus" : "break"} ${isPaused ? "paused" : ""}`;
   timeDisplay.textContent = formatTime(timeLeft);
-  phaseLabel.textContent = isFocus ? "Focus" : "Break";
-  timerDiv.className = `timer ${isFocus ? "focus" : "break"}`;
   updateProgress();
 }
 
@@ -84,19 +89,24 @@ function tick() {
 function start() {
   if (!isRunning) {
     isRunning = true;
+    isPaused = false;
     timerInterval = setInterval(tick, 1000);
+    updateDisplay();
   }
 }
 
 function pause() {
   isRunning = false;
+  isPaused = true;
   clearInterval(timerInterval);
+  updateDisplay();
 }
 
 function reset() {
   pause();
   isFocus = true;
   timeLeft = focusDuration * 60;
+  isPaused = false;
   updateDisplay();
 }
 
