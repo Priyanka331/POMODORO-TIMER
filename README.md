@@ -16,7 +16,7 @@ A single-screen Pomodoro timer with daily history, theme toggle, sound selector,
 That’s it — no installation required.
 
 ### 🌐 Deployed URL
-Live demo: https://yourusername.github.io/pomodoro-timer (yourusername.github.io in Bing)
+Live demo: https://priyanka331.github.io/POMODORO-TIMER/
 
 ### ✨ Features
 Configurable durations — set focus and break times.

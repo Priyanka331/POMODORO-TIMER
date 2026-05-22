@@ -4,7 +4,7 @@
 - Clone repo, open `index.html` in browser.
 - Deployed at: https://github.com/Priyanka331/POMODORO-TIMER
 - Open `index.html` in any modern browser; no installation required.
-- Deployed at: https://yourusername.github.io/pomodoro-timer
+- Deployed at: https://priyanka331.github.io/POMODORO-TIMER/
 
 ## 2. Stack & design choices
 - **Stack**: Vanilla HTML/CSS/JS — simplest, portable, no dependencies.
